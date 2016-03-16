@@ -9,6 +9,7 @@
 
 uint8_t flag=0;
 
+
 int main(void)
 {
     WDTCTL = WDTPW | WDTHOLD;					// Stop watchdog timer
@@ -21,21 +22,13 @@ int main(void)
 
     	if(flag==RX_OK)
     	{
-    		send_string((char *) "BECA");
+    		send_ping();
+    		//send_string((char *) "BECA");		// Test 2
     		flag = RX_NOK;
     	}
 
-/*    	int i;
-    	USBsendChar('G');
 
-    	for(i=0;i<1000;i++){
-    		i+=i;
-    	}
-
-    	USBsendChar('\n'); */
     }
-
-
 
 }
 
